@@ -6,6 +6,10 @@
   "scripts": {
     "test": "tape src/**/*.spec.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmikeschu/shisel.git"
+  },
   "keywords": [
     "shift",
     "select",
