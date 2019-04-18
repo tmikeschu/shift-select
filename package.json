@@ -4,7 +4,7 @@
   "description": "utility logic for implementing shift select functionality with checkboxes",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "tape src/**/*.spec.js"
   },
   "keywords": [
     "shift",
@@ -14,5 +14,15 @@
     "programming"
   ],
   "author": "tmikeschu",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.17.0",
+    "ramda": "^0.26.1",
+    "tape": "^4.10.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
 }
