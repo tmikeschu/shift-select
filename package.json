@@ -1,5 +1,5 @@
 {
-  "name": "shift-select",
+  "name": "shisel",
   "version": "1.0.0",
   "description": "utility logic for implementing shift select functionality with checkboxes",
   "main": "index.js",
