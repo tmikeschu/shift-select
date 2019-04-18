@@ -4,30 +4,30 @@ const shiftSelectRange = require("./shiftSelectRange");
 
 module.exports = ({
   isChecked,
-  itemValue,
-  shiftKeyUsed,
-  lastItem,
-  allItems,
+  item,
+  items,
   itemsEqual = equals,
-  setSelectedItems = identity,
+  lastItem,
   setLastChanged = identity,
+  setSelectedItems = identity,
+  shiftKeyUsed,
 }) => {
   const { action, arg } = isChecked
-    ? { action: "concat", arg: [itemValue] }
-    : { action: "filter", arg: selected => selected !== itemValue };
+    ? { action: "concat", arg: [item] }
+    : { action: "filter", arg: selected => selected !== item };
 
   const setter = shiftKeyUsed
     ? selectedItems =>
         shiftSelectRange({
           isChecked,
-          item: itemValue,
-          items: allItems,
+          item,
+          items,
           itemsEqual,
           lastItem,
           selectedItems,
         })
-    : selectedItems => selectedItems[action][arg];
+    : selectedItems => selectedItems[action](arg);
 
   setSelectedItems(setter);
-  setLastChanged({ itemValue, isChecked });
+  setLastChanged(item);
 };
